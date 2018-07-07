@@ -1,1 +1,5 @@
 This view is the root page in this app.
+- if logged_in?
+  = link_to 'ログアウト', logout_path
+- else
+  = link_to 'Twitterでログイン', 'auth/twitter'
