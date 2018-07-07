@@ -65,6 +65,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml-rails'
 gem 'erb2haml'
 gem 'autoprefixer-rails'
+gem 'breadcrumbs_on_rails'
+gem 'bootstrap', '~> 4.1.0'
+gem 'bootstrap-material-design'
+gem 'jquery-rails'
+gem 'toastr-rails'
 
 # Twitter gems
 gem 'omniauth'
