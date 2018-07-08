@@ -1,0 +1,52 @@
+.root-loggedout {
+  &__wrapper {
+    height: 100vh;
+    // 子要素の中央配置
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--1 {
+      background-color: orange;
+    }
+
+    &--2 {
+      background-color: skyblue;
+    }
+  }
+
+  &__contents {
+
+  }
+
+  &__img {
+    max-width: 70vw;
+    margin: 0 auto;
+
+    @include media-breakpoint-up(md) {
+      max-width: 35vw;
+    }
+
+    > img {
+      //　幅に合わせて高さの比率を固定
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__login-box {
+    text-align: center;
+    max-width: 400px;
+    margin: auto 15px;
+
+  }
+
+  &__login-heading {
+
+    &--1 {
+      font-weight: bold;
+      color: #eee;
+    }
+  }
+}
+

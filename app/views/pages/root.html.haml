@@ -1,4 +1,31 @@
 - if logged_in?
   = link_to 'ログアウト', logout_path
 - else
-  = link_to 'Twitterでログイン', 'auth/twitter'
+  .root-loggedout
+    .row
+      .root-loggedout__wrapper.root-loggedout__wrapper--2.col-md-6.d-none.d-md-flex
+        .root-loggedout__contents
+          .root-loggedout__item.my-1
+            Step1 つぶやきたいキーワードを入力
+          .root-loggedout__item.my-1
+            Step2 半端ないTweetを自動生成
+          .root-loggedout__img.my-2
+            = image_tag("HanpanaiTweetSample", alt: "半端ないツイート")
+
+      .root-loggedout__wrapper.root-loggedout__wrapper--1.col-md-6
+        .root-loggedout__login-box
+          %h1.root-loggedout__login-heading.root-loggedout__login-heading--1.mb-4
+            Hanpanai Tweet
+          %h2.root-loggedout__login-heading.root-loggedout__login-heading--2
+            半端ないTweetで世界を驚かせよう!!!
+          =link_to('auth/twitter', class: 'btn btn-info') do
+            %i.fab.fa-twitter.mr-2
+            Twitterでログイン
+
+          .root-loggedout__contents.d-md-none.mt-3
+            .root-loggedout__item.my-1
+              Step1 つぶやきたいキーワードを入力
+            .root-loggedout__item.my-1
+              Step2 半端ないTweetを自動生成
+            .root-loggedout__img.my-2.d-md-none.mt-3
+              = image_tag("HanpanaiTweetSample", alt: "半端ないツイート")
