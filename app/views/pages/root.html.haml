@@ -1,15 +1,49 @@
 - if logged_in?
-  = link_to 'ログアウト', logout_path
+  .root-loggedin
+    .container
+      .row
+        .col-md-3
+        .tweet.col-md-6
+          .h1.root-loggedin__title Hanpanai Tweet
+          = flash[:notice]
+          = form_tag tweet_path, name: 'Form1' do
+            .d-flex.flex-row.justify-content-between
+              =link_to(logout_path, class: 'btn btn-success btn-sm') do
+                ログアウト
+                %i.fas.fa-sign-out-alt
+              = submit_tag 'ツイート', {:class => "btn btn-info btn-sm"}
+            = text_area_tag :text1, "", {:onkeyup => "getText()", :placeholder => "大迫", :rows => 1, :class => "textbox"}
+            %p 半端ないって。
+            %p
+              = select_tag :select1, options_for_select(["あいつ", "あいつら", "これは", "あれは", "あなた", "自分", "おれ", "わたし"]), onchange: "getSelect(this)"
+              半端ないって。
+            %p
+              = text_area_tag :text2, "", {:onkeyup => "getText()", :placeholder => "後ろ向きのボールめっちゃトラップ", :class => "textbox"}
+              = select_tag :select2, options_for_select(["するもん。", "もん。", "だもん。"]), onchange: "getSelect(this)"
+            %p そんなんできひんやん、普通。
+            = text_area_tag :text3, "", {:onkeyup => "getText()", :placeholder => "(自由記述) (例)そんなんできる？できるんやったら言っといてや。", :class => "textbox"}
+
+            .checkbox1
+              = check_box_tag 'checkbox1', true, true, {:onclick => "checkboxCheck()"}
+              サイトURLをツイートの最後に付けてつぶやく
+
+
+            %br
+            = text_area_tag :text, "", {readonly: true, id: "Tweetbox", :rows => 8, :class => "textbox textbox--connect"}
+
+
 - else
   .root-loggedout
     .row
       .root-loggedout__wrapper.root-loggedout__wrapper--2.col-md-6.d-none.d-md-flex
         .root-loggedout__contents
-          .root-loggedout__item.my-1
-            Step1 つぶやきたいキーワードを入力
-          .root-loggedout__item.my-1
+          .root-loggedout__item
+            Step1 半端ないテンプレートにつぶやきたいキーワードを入力
+          .root-loggedout__img.root-loggedout__img--1.mb-3
+            = image_tag("HanpanaiTweetHowTo.png", alt: "半端ないツイート")
+          .root-loggedout__item
             Step2 半端ないTweetを自動生成
-          .root-loggedout__img.my-2
+          .root-loggedout__img.root-loggedout__img--2
             = image_tag("HanpanaiTweetSample", alt: "半端ないツイート")
 
       .root-loggedout__wrapper.root-loggedout__wrapper--1.col-md-6
@@ -18,14 +52,16 @@
             Hanpanai Tweet
           %h2.root-loggedout__login-heading.root-loggedout__login-heading--2
             半端ないTweetで世界を驚かせよう!!!
-          =link_to('auth/twitter', class: 'btn btn-info') do
+          =link_to('auth/twitter', class: 'btn btn-info u-text-notransform') do
             %i.fab.fa-twitter.mr-2
             Twitterでログイン
 
           .root-loggedout__contents.d-md-none.mt-3
-            .root-loggedout__item.my-1
+            .root-loggedout__item
               Step1 つぶやきたいキーワードを入力
-            .root-loggedout__item.my-1
+            .root-loggedout__img.root-loggedout__img--1.mb-3
+              = image_tag("HanpanaiTweetHowTo.png", alt: "半端ないツイート")
+            .root-loggedout__item
               Step2 半端ないTweetを自動生成
-            .root-loggedout__img.my-2.d-md-none.mt-3
+            .root-loggedout__img.root-loggedout__img--2
               = image_tag("HanpanaiTweetSample", alt: "半端ないツイート")

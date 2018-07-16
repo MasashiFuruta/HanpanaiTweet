@@ -1,0 +1,94 @@
+// サイトログアウト時のCSS
+.root-loggedout {
+  &__wrapper {
+    height: 100vh;
+    // 子要素の中央配置
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--1 {
+      background-color: orange;
+    }
+
+    &--2 {
+      background-color: skyblue;
+    }
+  }
+
+  &__contents {
+
+  }
+
+  &__img {
+
+    > img {
+      //　幅に合わせて高さの比率を固定
+      width: 100%;
+      height: auto;
+    }
+
+    &--1 {
+      max-width: 60vw;
+      margin: 0 auto;
+
+      @include media-breakpoint-up(md) {
+        max-width: 30vw;
+      }
+    }
+
+    &--2 {
+      max-width: 70vw;
+      margin: 0 auto;
+
+      @include media-breakpoint-up(md) {
+        max-width: 35vw;
+      }
+    }
+
+
+  }
+
+  &__login-box {
+    text-align: center;
+    max-width: 400px;
+    margin: auto 15px;
+
+  }
+
+  &__login-heading {
+
+    &--1 {
+      font-weight: bold;
+      color: #fff;
+    }
+  }
+}
+
+// サイトログイン時のCSS
+.root-loggedin {
+
+  &__title {
+    font-size: 2rem;
+  }
+}
+#Tweetbox {
+  width: 100%;
+  background: #eee;
+}
+
+.textbox {
+  width: 100%;
+  border-color: #d6d6d6;
+  border-radius: 3px;
+  resize: none;
+
+  &--connect {
+    //border-color: #777;
+    box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
+  }
+}
+
+.tweet {
+  margin-top: .5rem;
+}
