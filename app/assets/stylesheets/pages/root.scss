@@ -1,7 +1,12 @@
 // サイトログアウト時のCSS
 .root-loggedout {
   &__wrapper {
-    height: 100vh;
+    // height: 100%;
+
+    @include media-breakpoint-up(md) {
+      height: 100vh;
+    }
+
     // 子要素の中央配置
     display: flex;
     justify-content: center;
@@ -9,10 +14,12 @@
 
     &--1 {
       background-color: orange;
+      padding: 2rem;
     }
 
     &--2 {
       background-color: skyblue;
+      padding: 2rem;
     }
   }
 
