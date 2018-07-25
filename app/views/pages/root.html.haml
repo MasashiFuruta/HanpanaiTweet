@@ -13,16 +13,16 @@
                 ログアウト
                 %i.fas.fa-sign-out-alt
               = submit_tag 'ツイート', {:class => "btn btn-info btn-sm"}
-            = text_area_tag :text1, "", {:onchange => "getText()", :placeholder => "大迫", :rows => 1, :class => "textbox"}
+            = text_area_tag :text1, "", {:onkeyup => "getText()", :onchange => "getText()", :placeholder => "大迫", :rows => 1, :class => "textbox"}
             %p 半端ないって。
             %p
               = select_tag :select1, options_for_select(["あいつ", "あいつら", "これは", "あれは", "あなた", "自分", "おれ", "わたし"]), onchange: "getSelect(this)"
               半端ないって。
             %p
-              = text_area_tag :text2, "", {:onchange => "getText()", :placeholder => "後ろ向きのボールめっちゃトラップ", :class => "textbox"}
+              = text_area_tag :text2, "", {:onkeyup => "getText()", :onchange => "getText()", :placeholder => "後ろ向きのボールめっちゃトラップ", :class => "textbox"}
               = select_tag :select2, options_for_select(["するもん。", "もん。", "だもん。"]), onchange: "getSelect(this)"
             %p そんなんできひんやん、普通。
-            = text_area_tag :text3, "", {:onchange => "getText()", :placeholder => "(自由記述) (例)そんなんできる？できるんやったら言っといてや。", :class => "textbox"}
+            = text_area_tag :text3, "", {:onkeyup => "getText()", :onchange => "getText()", :placeholder => "(自由記述) (例)そんなんできる？できるんやったら言っといてや。", :class => "textbox"}
 
             .checkbox1
               = check_box_tag 'checkbox1', true, true, {:onclick => "checkboxCheck()"}
