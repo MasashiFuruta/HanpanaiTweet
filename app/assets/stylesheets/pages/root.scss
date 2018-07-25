@@ -73,8 +73,17 @@
 
   &__title {
     font-size: 2rem;
+
+    & a{
+      color: #212529;
+    }
+
+    & a:hover{
+      text-decoration: none;
+    }
   }
 }
+
 #Tweetbox {
   width: 100%;
   background: #eee;
